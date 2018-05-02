@@ -1,6 +1,3 @@
-/**
- * Copyright 2018 Liberty Global (http://www.libertyglobal.com) and produced by Piksel (http://www.piksel.com)
- */
 package es.davidfrigola.poc.heapanalysis.app;
 
 import java.util.HashMap;

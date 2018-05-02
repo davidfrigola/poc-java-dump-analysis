@@ -15,7 +15,7 @@ heapdump:
 	echo "jmap -dump:file=heapdump.hprof,format=b 31280"
 	
 load-thread:
-	echo "TODO"
+	curl http://localhost:9999/doThread
 
 threaddump:
 	echo "TODO"
