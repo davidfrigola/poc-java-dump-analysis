@@ -34,3 +34,4 @@ Use `make load-thread` up to 3 times. This will use doThread endpoint, creating 
 Then, obtain thread dumps using `make threaddump`.
 This will generate `threaddump_[1..5].tdump` files you can analyse later.
 
+Nice online tool : https://jstack.review/ you can upload multiple thread dump files, and compare in pairs.
