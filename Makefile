@@ -4,7 +4,7 @@ default:
 build:
 	mvn clean package -f app/pom.xml
 run:
-	java -jar -Xmx256m -Xmx256m app/target/heap-analysis-0.0.1-SNAPSHOT.jar
+	java -jar -Xmx64m -Xmx64m app/target/heap-analysis-0.0.1-SNAPSHOT.jar
 	
 load-heap:
 	curl http://localhost:9999/doStore
@@ -21,5 +21,5 @@ threaddump:
 
 clean:
 	rm -f *.hprof
-	rm -f *.tprof
+	rm -f *.tdump
 
