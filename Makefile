@@ -1,5 +1,5 @@
 default:
-	@echo "Use build|run|load-heap|heapdump|load-thread|threaddump"
+	@echo "Use build|run|load-heap|heapdump|load-thread|threaddump|clean"
 	
 build:
 	mvn clean package -f app/pom.xml
@@ -18,3 +18,8 @@ load-thread:
 
 threaddump:
 	sh scripts/dothreaddump.sh
+
+clean:
+	rm -f *.hprof
+	rm -f *.tprof
+
