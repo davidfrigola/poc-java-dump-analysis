@@ -8,4 +8,4 @@ cache:
   - $HOME/.m2
 
   
-script: mvn test -s .travis.settings.xml -f ./app/pom.xml
+script: mvn package -f ./app/pom.xml
