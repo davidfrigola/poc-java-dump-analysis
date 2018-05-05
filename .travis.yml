@@ -18,4 +18,4 @@ script:
   - docker logs test-ci
   - make load-heap; make load-heap; make load-heap
   - make heapdump-ci
-
+  - ls -al /tmp/heap*
