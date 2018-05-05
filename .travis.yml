@@ -15,6 +15,7 @@ script:
   - make build-container-ci
   - make run-container-ci
   - sleep 30s
+  - docker logs test1
   - make load-heap; make load-heap; make load-heap
   - make heapdump-ci
 
