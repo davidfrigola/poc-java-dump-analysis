@@ -7,9 +7,7 @@ build:
 build-container:
 	mvn clean install dockerfile:build -f app/pom.xml
 build-container-ci:
-	cd app
-	docker build -t poc/heap-analysis .
-	cd ..
+	docker build -f app/Dockerfile -t poc/heap-analysis .
 
 run:
 	java -jar -Xmx64m -Xmx64m app/target/heap-analysis-0.0.1-SNAPSHOT.jar
