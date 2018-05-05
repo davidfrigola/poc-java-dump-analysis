@@ -8,4 +8,8 @@ cache:
   - $HOME/.m2
 
   
-script: mvn package -f ./app/pom.xml
+script: make build-container
+script: make run-container-ci
+script: make load-heap; make load-heap; make load-heap
+script: make heapdump-ci
+
