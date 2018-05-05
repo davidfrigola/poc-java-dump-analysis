@@ -8,8 +8,9 @@ cache:
   - $HOME/.m2
 
   
-script: make build-container
-script: make run-container-ci
-script: make load-heap; make load-heap; make load-heap
-script: make heapdump-ci
+script: 
+  - make build-container
+  - make run-container-ci
+  - make load-heap; make load-heap; make load-heap
+  - make heapdump-ci
 
