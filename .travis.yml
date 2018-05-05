@@ -14,6 +14,7 @@ script:
   - make build
   - make build-container-ci
   - make run-container-ci
+  - sleep 30s
   - make load-heap; make load-heap; make load-heap
   - make heapdump-ci
 
