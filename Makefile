@@ -1,11 +1,16 @@
 default:
-	@echo "Use build|build-container|run|run-container-ci|load-heap|heapdump|heampdump-ci|load-thread|threaddump|clean"
+	@echo "Use build|build-container|build-container-ci|run|run-container-ci|load-heap|heapdump|heampdump-ci|load-thread|threaddump|clean"
 	
 build:
 	mvn clean package -f app/pom.xml
 
 build-container:
 	mvn clean install dockerfile:build -f app/pom.xml
+build-container-ci:
+	cd app
+	docker build -t poc/heap-analysis .
+	cd ..
+
 run:
 	java -jar -Xmx64m -Xmx64m app/target/heap-analysis-0.0.1-SNAPSHOT.jar
 	
