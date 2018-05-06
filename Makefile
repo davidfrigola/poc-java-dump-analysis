@@ -12,7 +12,7 @@ run:
 	java -jar -Xmx64m -Xmx64m app/target/heap-analysis-0.0.1-SNAPSHOT.jar
 	
 run-container-ci:
-	docker run -d -p 9999:9999 --name test-ci -t poc/heap-analysis
+	docker run -d -p 9999:9999 -v /tmp:/tmp --name test-ci -t poc/heap-analysis
 stop-container-ci:
 	docker stop test-ci
 	docker rm test-ci
