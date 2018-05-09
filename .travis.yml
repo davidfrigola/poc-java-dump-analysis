@@ -11,11 +11,4 @@ cache:
 
   
 script: 
-  - make build
-  - make build-container-ci
-  - make run-container-ci
-  - sleep 30s
-  - docker logs test-ci
-  - make load-heap; make load-heap; make load-heap
-  - make heapdump-ci
-  - ls -al /tmp/heap*
+  - make ci
