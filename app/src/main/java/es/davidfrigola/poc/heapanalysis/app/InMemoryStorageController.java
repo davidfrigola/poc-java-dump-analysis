@@ -6,6 +6,7 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -13,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class InMemoryStorageController {
 
 
-    private ConcurrentHashMap<String, Map<?,?>> storage = new ConcurrentHashMap<>();
+    private static final String DEFAULT_ITEMS = "10000";
+	private ConcurrentHashMap<String, Map<?,?>> storage = new ConcurrentHashMap<>();
 
     @RequestMapping("/doStore")
-    public String doSomething(){
+    public String doSomething(@RequestParam(name="items",defaultValue=DEFAULT_ITEMS) Integer items){
         Map<String,String> storeMe = new HashMap<>();
-        for(int i=1;i<100000;i++){
+        for(int i=1;i<items;i++){
 
             storeMe.put(Integer.toString(i), UUID.randomUUID()+"");
         }
