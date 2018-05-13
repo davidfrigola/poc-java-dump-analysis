@@ -42,3 +42,17 @@ Nice online tool : https://jstack.review/ you can upload multiple thread dump fi
 
 Use `make threaddump-ci` when using the ci version. This will generate a `.tdump` file in your tmp folder.
 
+# CI
+
+Travis-ci is used to demonstrate how this all works.
+It will use `make ci` , that includes:
+
+* build app and docker container
+* start container (naugthy slepp to wait for it to start, but hey, this works!)
+* hit the `doStore` endpoint several times so there's some heap info available
+* generate heap and thread dumps
+* check (`ls` to the rescue) dump files are generated in `/tmp` folder
+
+You can use `make ci` locally to quickly get some dumps to explore.
+
+
