@@ -50,7 +50,7 @@ ci: build build-container-ci run-container-ci
 	make load-heap; make load-heap; make load-heap
 	make heapdump-ci
 	ls -al /tmp/heapdump.hprof
-	make threadump-ci
+	make threaddump-ci
 	ls -al /tmp/threaddump.tdump
 
 
