@@ -1,5 +1,5 @@
 default:
-	@echo "Use build|build-container|build-container-ci|run|run-container-ci|load-heap|heapdump|heampdump-ci|load-thread|threaddump|clean"
+	@echo "Use build|build-container|build-container-ci|run|run-container-ci|load-heap|heapdump|heapdump-ci|load-thread|threaddump|threadump-ci|clean|ci"
 
 
 build:
@@ -38,6 +38,9 @@ load-thread:
 threaddump:
 	sh scripts/dothreaddump.sh
 
+threaddump-ci:
+	docker exec -it test-ci jstack -l 1 | tee "/tmp/threaddump.tdump"
+
 clean:
 	rm -f *.hprof
 	rm -f *.tdump
@@ -46,5 +49,8 @@ ci: build build-container-ci run-container-ci
 	sleep 30s
 	make load-heap; make load-heap; make load-heap
 	make heapdump-ci
-	ls -al /tmp/heap*
+	ls -al /tmp/heapdump.hprof
+	make threadump-ci
+	ls -al /tmp/threaddump.tdump
+
 

@@ -28,6 +28,10 @@ Running it a couple of times will provide enough number of threads!
 Use `make load-heap` up to 5 times. This will use doStore endpoint, storing a relatively big amount of data in memory. Then, to generate a heap dump, use `make heapdump`
 This will generate a `heapdump.hprof` file that an be analysed by your favourite tool.
 
+Use `make heapdump-ci` when using the ci (dockerized)` version.This will generate a hprof file in your `/tmp` folder.
+Note : be sure to chmod the resulting `/tmp/heapdump.hprof` file so your user can read it.
+
+
 # Exploring the threads
 
 Use `make load-thread` up to 3 times. This will use doThread endpoint, creating 1000 threads sleeping 1 minute each.
@@ -35,3 +39,6 @@ Then, obtain thread dumps using `make threaddump`.
 This will generate `threaddump_[1..5].tdump` files you can analyse later.
 
 Nice online tool : https://jstack.review/ you can upload multiple thread dump files, and compare in pairs.
+
+Use `make threaddump-ci` when using the ci version. This will generate a `.tdump` file in your tmp folder.
+
