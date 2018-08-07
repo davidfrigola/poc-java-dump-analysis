@@ -2,7 +2,7 @@
 
 Some code samples to force errors - and then generate memory/thread dumps to analyse
 
-[![Build Status](https://travis-ci.org/davidfrigola/poc-java-dump-analysis.svg?branch=master)](https://travis-ci.org/davidfrigola/poc-java-dump-analysis)
+[![Build Status](https://travis-ci.com/davidfrigola/poc-java-dump-analysis.svg?branch=master)](https://travis-ci.com/ /davidfrigola/poc-java-dump-analysis)
 
 # Application
 
