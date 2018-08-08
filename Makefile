@@ -45,7 +45,8 @@ clean:
 	rm -f *.hprof
 	rm -f *.tdump
 
-ci: build build-container-ci run-container-ci
+
+ci-ats:
 	sleep 30s
 	make load-heap; make load-heap; make load-heap
 	make heapdump-ci
@@ -53,4 +54,5 @@ ci: build build-container-ci run-container-ci
 	make threaddump-ci
 	ls -al /tmp/threaddump.tdump
 
+ci: build build-container-ci run-container-ci ci-ats stop-container-ci
 

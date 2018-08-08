@@ -18,20 +18,13 @@ public class ThreadNightmareController {
 
 	private static final String DEFAULT_THREADS = "1000";
 
+	private ThreadService threadService;
+	
     @RequestMapping("/doThread")
     public String doThread(@RequestParam(name="delay",defaultValue=DEFAULT_DELAY_MS) Long delay,
     		@RequestParam(name="threads",defaultValue=DEFAULT_THREADS) Integer threads){
 
-        for(int i=0;i<threads;i++){
-            TaskExecutor executor = new SimpleAsyncTaskExecutor(THREAD_NAME_PREFIX);
-            executor.execute(() -> {
-                try {
-                    Thread.sleep(delay);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            });
-        }
+    	threadService.generateThreads(THREAD_NAME_PREFIX, delay, threads, (Void) -> {return null;});
 
         return "done";
     }
